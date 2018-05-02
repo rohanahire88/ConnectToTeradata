@@ -11,7 +11,7 @@ username="xxxxx", password="xxxxx");
 #Select sample 10 rows for two columns from table and store the data in a list
 #The session.execute method can execute all queries
 for row in session.execute("SELECT top 10 id,name FROM dbname.tablename", queryTimeout=60):
-	list.append([getattr(row,'custianid'),getattr(row,'lyltycardnbr')])
+	list.append([getattr(row,'id'),getattr(row,'name')])
 
 #Print show table output on screen
 rows = session.execute("SHOW TABLE dbname.tablename")
