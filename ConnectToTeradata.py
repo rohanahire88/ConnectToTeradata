@@ -20,7 +20,6 @@ for row in session.execute("SELECT top 10 id,name FROM dbname.tablename", queryT
 print list
 	
 #Print show table output on screen
-rows = session.execute("SHOW TABLE dbname.tablename")
-for row in rows:
+for row in session.execute("SHOW VIEW l2_enterpriseanalytics.postrandtl"):
 	for line in re.split("\r\n|\n\r|\r|\n", row[0]):
 		print(line)
