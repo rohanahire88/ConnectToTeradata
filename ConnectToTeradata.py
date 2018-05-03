@@ -23,3 +23,7 @@ print list
 for row in session.execute("SHOW TABLE dbname.tablename"):
 	for line in re.split("\r\n|\n\r|\r|\n", row[0]):
 		print(line)
+		
+#Enumerate the tables in a database
+for row in session.execute("SELECT tablename FROM dbc.tables where databasename='appl'", queryTimeout=60):
+	print row
