@@ -44,3 +44,32 @@ Item named "td_password" added.
 Once this is added as a one time thing, we can then use the variable while logging on to teradata using SQL Assistant or as below in the python script.
 
 session = udaExec.connect(method="odbc", system="servername", username="rahire", password="$$tdwallet(td_password)");
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Steps to Connect using Golang on Windows
+------------------------------------------
+
+Pre-requisites
+---------------
+1. Teradata tools and utilities installed
+2. Install Git 
+3. Install Go for windows
+
+Steps
+----------------------------------------------------------
+1. Create ODBC driver for Teradata
+1.1 Open Control Panel --> Administrative Tools --> Set up data sources
+1.2 Create a system DSN
+1.3 Select driver as "Teradata"
+1.4 Name whatever you want, this is the DSN name which you  will use later
+1.5 Mechanism as blank
+1.6 Enter the servername of Teradata
+1.7 Enter username and password
+2. Install odbc on Windows --> go get github.com/alexbrainman/odbc
+3. In the script, change the DSN name to what you have created
+4. Run the script --> go run connect.go
+
+
+
